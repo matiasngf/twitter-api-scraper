@@ -52,10 +52,10 @@ const result: ParsedSearchResult = await client.search(query)
 const query: SearchQuery = {
   terms: '#typescript',
   dateFrom: '2021-02-15',
-  dateTo: '2020-02-15'
-  minReplies: 10
-  minRetweets: 10
-  minFaves: 10
+  dateTo: '2020-02-15',
+  minReplies: 10,
+  minRetweets: 10,
+  minFaves: 10,
   lang: 'es'
 }
 client.search(query)
