@@ -2,9 +2,12 @@ import TwitterClient from '../src'
 
 jest.setTimeout(20000)
 
-describe('Test Main client', async (): Promise<void> => {
-  const client = new TwitterClient()
+const client = new TwitterClient()
+beforeAll(async () => {
   await client.connect()
+})
+
+describe('Test Main client', (): void => {
   test('search', async (): Promise<void> => {
     const q = { terms: 'hello world!' }
     const result = await client.search(q, 5)
