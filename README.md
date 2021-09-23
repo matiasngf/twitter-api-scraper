@@ -2,7 +2,10 @@
 
 > Get typed data from the public twitter api. No keys required.
 
-[![NPM](https://img.shields.io/npm/v/twitter-api-scraper.svg)](https://www.npmjs.com/package/twitter-api-scraper) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [https://img.shields.io/github/license/matiasngf/twitter-api-scraper?style=flat-square](https://github.com/matiasngf/twitter-api-scraper/blob/main/LICENSE) [https://img.shields.io/github/issues/matiasngf/twitter-api-scraper](https://github.com/matiasngf/twitter-api-scraper/issues)
+[![NPM](https://img.shields.io/npm/v/twitter-api-scraper.svg)](https://www.npmjs.com/package/twitter-api-scraper) 
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) 
+[![License](https://img.shields.io/github/license/matiasngf/twitter-api-scraper?style=flat-square)](https://github.com/matiasngf/twitter-api-scraper/blob/main/LICENSE) 
+[![Issues](https://img.shields.io/github/issues/matiasngf/twitter-api-scraper)](https://github.com/matiasngf/twitter-api-scraper/issues)
 
 - [x] Search tweets
 - [x] Get users by username
