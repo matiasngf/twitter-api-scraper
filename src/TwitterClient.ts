@@ -9,6 +9,10 @@ import { getBearerToken } from './utils/getBearerToken'
 import { clientSearch, SearchQuery } from './utils/clientSearch'
 import { ParsedSearchResult, parseSearch } from './utils/parseSearch'
 import { SearchResults } from './types/searchResults'
+import { getHashflags, Hashflag } from './utils/getHashflags'
+import { getUser, getUserById } from './utils/getUser'
+import { UserInterface } from './types/userInterface'
+import { UserFromId } from './types/userFromIdInterface'
 
 export default class TwitterClient {
   // Options
@@ -95,13 +99,11 @@ export default class TwitterClient {
     this.say('New bearer token setted.')
   }
 
-  connect = async (maxRetries?: number) => {
+  connect = async () => {
     this.say('Connecting...')
-    const retries = maxRetries || this.maxRetries
     await this.getBearerToken()
     await this.getGuestToken()
     this.say('Connected to twitter')
-    return retries
   }
 
   private say = (message: any) => {
@@ -131,6 +133,33 @@ export default class TwitterClient {
     this.say('Searching...')
     const data = await clientSearch(this.apiClient, query, maxTweets, pageToken)
     this.say('Searched tweets')
+    return data
+  }
+
+  // Get User
+  getUser = async (username: string): Promise<UserInterface> => {
+    if (typeof username !== 'string') {
+      throw new Error('Username must be string.')
+    }
+    const name = username.replace('@', '')
+    this.say(`Getting user: ${name}`)
+    const data = await getUser(this.apiClient, name)
+    this.say('User OK')
+    return data
+  }
+
+  getUserById = async (userId: string | number): Promise<UserFromId> => {
+    this.say(`Getting user by id: ${userId}`)
+    const data = await getUserById(this.apiClient, userId)
+    this.say('User OK')
+    return data
+  }
+
+  // Get hashflags
+  getHashflags = async (date: string): Promise<Hashflag[]> => {
+    this.say('Getting hashflags...')
+    const data = await getHashflags(date)
+    this.say('Hashflags OK')
     return data
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "twitter-api-scraper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Scrape the twitter api, no keys required.",
   "author": "matiasngf",
   "license": "MIT",
